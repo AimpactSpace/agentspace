@@ -7,10 +7,30 @@ body {
   padding: 20px;
 }
 
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+}
+
+/* Main Content Area */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+/* Agent Grid */
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
 }
 
 /* Button Styles */
