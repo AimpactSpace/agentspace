@@ -1,0 +1,79 @@
+/* General Body Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+/* Button Styles */
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: medium;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #FF8C69, #FF69B4, #8A2BE2, #1E90FF);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #333333;
+  border: 2px solid #333333;
+}
+
+.btn-tertiary {
+  background-color: transparent;
+  color: #333333;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Status Tag Styles */
+.status-tag {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: medium;
+  font-size: 12px;
+}
+
+.status-tag-pending {
+  background-color: #F0E68C;
+  color: #333333;
+}
+
+.status-tag-in-progress {
+  background-color: #87CEEB;
+  color: white;
+}
+
+.status-tag-success {
+  background-color: #32CD32;
+  color: white;
+}
+
+.status-tag-failed {
+  background-color: #FF6347;
+  color: white;
+}
