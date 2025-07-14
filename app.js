@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = document.getElementById('app');
 
   // Groq SDK Configuration
+  const apiKey = localStorage.getItem('groq_api_key');
   const groq = new Groq({
-    apiKey: 'YOUR_GROQ_API_KEY', // Replace with your actual API key
+    apiKey: apiKey || 'YOUR_GROQ_API_KEY', // Replace with your actual API key
   });
 
   // Mock Data
@@ -31,7 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const title = document.createElement('h1');
   title.textContent = 'Agent Space';
   header.appendChild(title);
+  const settingsButton = new Button('Settings', 'secondary');
+  const settingsButtonElement = settingsButton.render();
+  header.appendChild(settingsButtonElement);
   app.appendChild(header);
+
+  const settingsPanel = document.getElementById('settings');
+  settingsButtonElement.addEventListener('click', () => {
+    settingsPanel.style.display = settingsPanel.style.display === 'none' ? 'block' : 'none';
+  });
+
+  const apiKeyInput = document.getElementById('api-key');
+  const saveApiKeyButton = document.getElementById('save-api-key');
+
+  saveApiKeyButton.addEventListener('click', () => {
+    const apiKey = apiKeyInput.value;
+    if (apiKey) {
+      localStorage.setItem('groq_api_key', apiKey);
+      alert('API key saved!');
+      settingsPanel.style.display = 'none';
+      // Re-initialize Groq with the new key
+      groq.apiKey = apiKey;
+    }
+  });
 
   const main = document.createElement('main');
   app.appendChild(main);
